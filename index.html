@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas3d"></canvas>
+    <script type="module">
+    import { Application } from 'https://unpkg.com/@splinetool/runtime@0.9.61/build/runtime.js';
+
+    const canvas = document.getElementById('canvas3d');
+    const app = new Application(canvas);
+    app.load('https://prod.spline.design/3VWN1yXtQGrHgPAL/scene.splinecode')
+    .then(() => {
+        app.addEventListener('mousedown', (e) => {
+			if (e.target.name === 'Cube') {
+				console.log('I have been clicked!');
+			}
+        });
+    });
+    </script>
+</body>
+</html>
